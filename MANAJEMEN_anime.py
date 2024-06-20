@@ -245,8 +245,12 @@ class AnimeApp:
         tk.Label(self.view_anime_frame, text="Daftar Anime", font=('Arial', 24)).pack(pady=10)
         self.anime_listbox = tk.Listbox(self.view_anime_frame, font=('Arial', 14), width=50, height=10)
         self.anime_listbox.pack(pady=10)
-        tk.Button(self.view_anime_frame, text="Urutkan Anime", font=('Arial', 14), command=self.sort_anime).pack(pady=5)
-        tk.Button(self.view_anime_frame, text="Kembali ke Menu", font=('Arial', 14), command=self.show_main_frame).pack(pady=10)
+
+        button_frame = tk.Frame(self.view_anime_frame)
+        button_frame.pack(pady=10)
+
+        tk.Button(button_frame, text="Urutkan Anime", font=('Arial', 14), command=self.sort_anime).grid(row=0, column=0, padx=5)
+        tk.Button(button_frame, text="Kembali ke Menu", font=('Arial', 14), command=self.show_main_frame).grid(row=0, column=1, padx=5)
 
     def setup_remove_anime_frame(self):
         tk.Label(self.remove_anime_frame, text="Hapus Anime", font=('Arial', 24)).pack(pady=10)
